@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   namespace :api do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
-
-    resources :erps, only: [:create]
+    resources :microposts, only: [:index, :create, :update, :destroy, :show]
   end
 end
