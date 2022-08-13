@@ -17,6 +17,7 @@ class Api::MicropostsController < ApplicationController
   end
 
   def update
+    binding.pry
     micropost = current_user.microposts.find(params[:id])
     micropost.update!(micropost_params)
     render json: micropost, serializer: MicropostSerializer
