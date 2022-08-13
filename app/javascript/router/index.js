@@ -4,6 +4,8 @@ Vue.use(VueRouter)
 import PageUserRegister from '@/pages/PageUserRegister'
 import PageUserLogin from '@/pages/PageUserLogin'
 import PageTimeline from '@/pages/PageTimeline'
+import MicropostForm from '@/components/MicropostForm'
+
 const router = new VueRouter({
   mode: 'history',
     routes: [
