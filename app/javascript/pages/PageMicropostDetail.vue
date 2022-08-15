@@ -2,7 +2,7 @@
   <div v-if="micropost">
     <v-list-item>
       <v-list-item-avatar>
-        <v-img src="https://picsum.photos/80/80/?random"></v-img>
+        <v-img :src="micropost.user.avatar_url"></v-img>
       </v-list-item-avatar>
       <v-list-item-content>
        <v-list-item-title v-html="micropost.user.name"></v-list-item-title>
