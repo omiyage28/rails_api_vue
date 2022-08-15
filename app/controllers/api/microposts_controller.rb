@@ -1,9 +1,12 @@
 class Api::MicropostsController < ApplicationController
   before_action :authenticate, only: [:create, :update]
+  PER_PAGE = 10
   
   def index
-    microposts = Micropost.includes(:user).order(created_at: :desc)
-    render json: microposts, each_serializer: MicropostSerializer
+    microposts = Micropost.includes(:user).order(created_at: :desc).page(params[:page]).per(PER_PAGE)
+    render json: microposts, each_serializer: MicropostSerializer, meta: { total_pages: microposts.total_pages,
+                                                                           total_count: microposts.total_count,
+                                                                           current_page: microposts.current_page }
   end
 
   def show
@@ -17,7 +20,6 @@ class Api::MicropostsController < ApplicationController
   end
 
   def update
-    binding.pry
     micropost = current_user.microposts.find(params[:id])
     micropost.update!(micropost_params)
     render json: micropost, serializer: MicropostSerializer
