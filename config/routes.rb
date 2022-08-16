@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/index', to: 'home#index'
   
   namespace :api do
-    resources :users, only: [:create, :show]
+    resources :users, only: [:index, :create, :show]
     resource :session, only: [:create, :destroy]
     resources :microposts, only: [:index, :create, :update, :destroy, :show]
   end
