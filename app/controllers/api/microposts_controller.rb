@@ -1,5 +1,5 @@
 class Api::MicropostsController < ApplicationController
-  before_action :authenticate, only: [:create, :update]
+  before_action :authenticate, only: [:create, :update, :destroy]
   PER_PAGE = 10
   
   def index
