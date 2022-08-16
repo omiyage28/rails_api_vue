@@ -36,7 +36,7 @@
             </v-btn>
           </v-card-title>
           <v-list>
-            <v-list-item @click="">
+            <v-list-item>
               <v-list-item-icon>
                 <v-icon color="indigo">mdi-account</v-icon>
               </v-list-item-icon>
@@ -47,7 +47,7 @@
 
             <v-divider inset></v-divider>
 
-            <v-list-item @click="">
+            <v-list-item >
               <v-list-item-icon>
                 <v-icon color="indigo">mdi-email</v-icon>
               </v-list-item-icon>
@@ -59,7 +59,7 @@
 
             <v-divider inset></v-divider>
 
-            <v-list-item @click="">
+            <v-list-item >
               <v-list-item-icon>
                 <v-icon color="indigo">mdi-account-details</v-icon>
               </v-list-item-icon>
